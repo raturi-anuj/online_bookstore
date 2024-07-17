@@ -1,0 +1,116 @@
+.AppBar {
+  background-color: #232f3e;
+  height: 60px;
+}
+
+.Toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LogoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Logo {
+  margin-right: 16px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 2px;
+  border: 1px solid transparent;
+}
+
+.AddressButton {
+  height:40px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.AddressButton:hover, .HoverButton:hover {
+  border: 1px solid #ddd;
+  cursor:pointer;
+}
+
+.AddressButtonIcon {
+  margin-right: 8px;
+}
+
+.AddressText {
+  text-transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.AddressText span:first-child {
+  font-size: 10px;
+}
+
+.AddressText span:last-child {
+  font-size: 12px;
+}
+
+.Autocomplete {
+  flex-grow: 1;
+  margin: 0 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.SearchInput .MuiOutlinedInput-root {
+  margin-left: 30px;
+  height: 36px;
+  width: 800px;
+  background-color: white;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.SearchInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.SearchInput .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(174, 100, 218);
+}
+
+faded {
+  opacity: 0.5;
+}
+
+.Wishlist { 
+  padding: 0 10px;
+  border: 1px solid transparent;
+}
+
+.Cart {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid transparent;
+}
+
+.Profile {
+  border: 1px solid transparent;
+}
+.IconButton {
+  margin: 0 8px;
+  border: 1px solid transparent;
+}
+
+.LoginButton span {
+  margin-left: 8px;
+}
+.LoginButton {
+  height: 40px;
+  padding: 0 2px;
+}
+
+.HoverButton:hover {
+  border: 1px solid #ddd;
+}
