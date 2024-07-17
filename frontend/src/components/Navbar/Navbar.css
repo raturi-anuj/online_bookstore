@@ -1,5 +1,5 @@
 .AppBar {
-  background-color: #232f3e;
+  background-color: #232f3e !important;
   height: 60px;
 }
 
@@ -33,8 +33,12 @@
   border: 1px solid transparent;
 }
 
-.AddressButton:hover, .HoverButton:hover {
-  border: 1px solid #ddd;
+.MenuIcon {
+  border: 1px solid transparent !important;
+}
+
+.AddressButton:hover, .MenuIcon:hover {
+  border: 1px solid #ddd !important;
   cursor:pointer;
 }
 
@@ -66,7 +70,7 @@
   justify-content: center;
 }
 
-.SearchInput .MuiOutlinedInput-root {
+.SearchBar .MuiOutlinedInput-root {
   margin-left: 30px;
   height: 36px;
   width: 800px;
@@ -75,40 +79,30 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-.SearchInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
-.SearchInput .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+.SearchBar .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.SearchBar .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: rgb(174, 100, 218);
 }
 
-faded {
-  opacity: 0.5;
-}
-
-.Wishlist { 
-  padding: 0 10px;
-  border: 1px solid transparent;
-}
-
-.Cart {
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid transparent;
-}
-
-.Profile {
-  border: 1px solid transparent;
-}
 .IconButton {
-  margin: 0 8px;
-  border: 1px solid transparent;
+  border: 1px solid red;
+}
+
+.IconButton:hover {
+  border: 1px solid #ddd;
 }
 
 .LoginButton span {
   margin-left: 8px;
 }
+
 .LoginButton {
   height: 40px;
   padding: 0 2px;
+}
+
+.LoginButton:hover {
+  border: 1px solid #ddd;
 }
 
 .HoverButton:hover {
