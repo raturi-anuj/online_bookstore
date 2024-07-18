@@ -1,5 +1,4 @@
 .AppBar {
-  background-color: #232f3e !important;
   height: 60px;
 }
 
@@ -17,6 +16,7 @@
 
 .Logo {
   margin-right: 16px;
+  margin-left: 16px;
   height: 40px;
   border-radius: 4px;
   padding: 2px;
@@ -24,7 +24,7 @@
 }
 
 .AddressButton {
-  height:40px;
+  height: 40px;
   display: flex;
   align-items: center;
   padding: 2px;
@@ -39,7 +39,7 @@
 
 .AddressButton:hover, .MenuIcon:hover {
   border: 1px solid #ddd !important;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .AddressButtonIcon {
@@ -56,49 +56,47 @@
 }
 
 .AddressText span:first-child {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .AddressText span:last-child {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .Autocomplete {
   flex-grow: 1;
   margin: 0 16px;
   display: flex;
-  justify-content: center;
+  justify-content: center;;
 }
 
 .SearchBar .MuiOutlinedInput-root {
-  margin-left: 30px;
   height: 36px;
-  width: 800px;
+  max-width: 900px;
+  min-width: 400px;
   background-color: white;
   border-radius: 4px;
   transition: border-color 0.3s ease-in-out;
 }
 
-.SearchBar .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
-.SearchBar .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+.SearchInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(174, 100, 218);
+}
+
+.SearchInput .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: rgb(174, 100, 218);
 }
 
 .IconButton {
-  border: 1px solid red;
+  border: 1px solid #ddd;
 }
 
 .IconButton:hover {
   border: 1px solid #ddd;
 }
 
-.LoginButton span {
-  margin-left: 8px;
-}
-
 .LoginButton {
   height: 40px;
-  padding: 0 2px;
 }
 
 .LoginButton:hover {
@@ -107,4 +105,79 @@
 
 .HoverButton:hover {
   border: 1px solid #ddd;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .SearchBar .MuiOutlinedInput-root {
+      max-width: 600px;
+      min-width: 400px;
+  }
+  
+  .LoginButton {
+    display: block;
+  }
+
+  .LoginIcon {
+    display: none;
+  }
+}
+
+
+@media (max-width: 830px) and (min-width: 401px) {
+  .Logo {
+      height: 30px;
+  }
+
+  .Toolbar {
+      padding: 0 10px;
+  }
+
+  .AddressButton {
+      display: none;
+  }
+
+  .SearchBar .MuiOutlinedInput-root {
+      max-width: 400px;
+      min-width: 100px;
+  }
+
+  .IconButton {
+      height: 30px;
+      width: 30px;
+  }
+
+  .LoginButton {
+      display: none;
+  }
+  
+  .LoginIcon {
+    display: block;
+}
+
+  .MenuIcon,
+  .AddressButtonIcon {
+      height: 30px;
+      width: 30px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .SearchBar .MuiOutlinedInput-root {
+      max-width: 150px;
+      min-width: 50px;
+  }
+
+  .AddressButton {
+      display: none;
+  }
+
+  .IconButton {
+      display: none;
+  }
+
+  .MenuIcon {
+      display: block;
+  }
 }
