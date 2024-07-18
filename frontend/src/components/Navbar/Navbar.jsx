@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Button, Box, TextField } from '@mui/material';
 import { Menu as MenuIcon, LocationOn as LocationOnIcon, Search as SearchIcon, Favorite as FavoriteIcon, ShoppingCart as ShoppingCartIcon, AccountCircle as AccountCircleIcon } from '@mui/icons-material';
 import Autocomplete from '@mui/material/Autocomplete';
+import Tooltip from '@mui/material/Tooltip';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -17,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="fixed" className="AppBar">
+        <AppBar position="fixed" className="AppBar" sx= {{bgcolor: "#232f3e"}}>
             <Toolbar className="Toolbar">
                 <IconButton  color="inherit" aria-label="menu" className="MenuIcon">
                     <MenuIcon />
@@ -28,7 +29,7 @@ const Navbar = () => {
                 <Box className="AddressButton HoverButton">
                     <LocationOnIcon className="AddressButtonIcon" />
                     <Button color="inherit" className="AddressText">
-                        <span>Delivering to</span>
+                        <span>Deliver to</span>
                         <span>Location</span>
                     </Button>
                 </Box>
@@ -48,20 +49,22 @@ const Navbar = () => {
                             className="SearchBar"
                             onFocus={handleFocus}
                             onBlur={handleBlur}
+                            sx={{ display: 'flex', alignItems: 'center' }}
                         />
-                    )}
-                    className="Autocomplete"/>
+                    )} className="Autocomplete"/>
                     <IconButton color="inherit" className="IconButton" sx={{border: "1px solid transparent"}} component ={Link} to="/wishlist">
                         <FavoriteIcon />
                     </IconButton>
                     <IconButton color="inherit" className="IconButton" sx={{border: "1px solid transparent"}} component ={Link} to="/cart">
                         <ShoppingCartIcon />
                     </IconButton>
-                    <Button color="inherit" startIcon={<AccountCircleIcon />} className="LoginButton" sx={{border: "1px solid transparent"}} component={Link} to="/signin">
-                        Sign in
-                    </Button>
+                    <Tooltip arrow title="Sign in">
+                        <IconButton color="inherit" fontSize="large" className="IconButton" sx={{border: "1px solid transparent"}} component={Link} to="/signin">
+                            <AccountCircleIcon />
+                        </IconButton>
+                    </Tooltip>
             </Toolbar>
-        </AppBar>
+        </AppBar>   
     );
 };
 
