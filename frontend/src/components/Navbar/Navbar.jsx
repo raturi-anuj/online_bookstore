@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="fixed" className="AppBar" sx= {{bgcolor: "#232f3e"}}>
+        <AppBar position="fixed" className="AppBar" sx= {{bgcolor: "black"}}>
             <Toolbar className="Toolbar">
                 <IconButton  color="inherit" aria-label="menu" className="MenuIcon">
                     <MenuIcon />
