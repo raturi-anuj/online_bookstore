@@ -5,6 +5,7 @@ import banner1 from '../../assets/banner1.png';
 import banner2 from '../../assets/banner2.png';
 import banner3 from '../../assets/banner3.png';
 import './Banner.css';
+import OverlayContainers from '../OverlayContainers/OverlayContainers';
 
 const banners = [
   { id: 1, src: banner1 },
@@ -41,6 +42,7 @@ const Banner = () => {
           className={`banner ${index === currentIndex ? 'active' : ''}`}
         />
       ))}
+      <OverlayContainers />
       <div className="prev-button" onClick={handlePrev}>
         <ArrowBackIosIcon />
       </div>

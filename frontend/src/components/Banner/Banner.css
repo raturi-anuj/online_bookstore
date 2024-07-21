@@ -1,65 +1,65 @@
 .banner-container {
-    position: relative;
-    width: 100%;
-    height: 600px; 
-    overflow: hidden;
-    background-color: #f0f0f0; 
-    margin-top: 60px;
-  }
-  
-  .banner {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .banner.active {
-    opacity: 1;
-  }
-  
-  .prev-button, .next-button {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 30px; 
-    z-index: 10;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s, background-color 0.3s, width 0.3s, border-radius 0.3s;
-  }
-  
-  .prev-button {
-    left: 0;
-    border-top-right-radius: 50px; 
-    border-bottom-right-radius: 50px; 
-  }
-  
-  .next-button {
-    right: 0;
-    border-top-left-radius: 50px; 
-    border-bottom-left-radius: 50px; 
-  }
+  position: relative;
+  width: 100%;
+  height: 600px; 
+  overflow: hidden;
+  background-color: #f0f0f0; 
+  margin-top: 60px;
+}
 
-  .prev-button:hover, .next-button:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 30px; 
-  }
-  
-  .arrow-icon {
-    opacity: 1;
-    transition: opacity 0.3s;
-  }
-  
-  .prev-button:hover .arrow-icon, .next-button:hover .arrow-icon {
-    opacity: 1;
-  }
+.banner {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner.active {
+  opacity: 1;
+}
+
+.prev-button, .next-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px; 
+  z-index: 10;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s, background-color 0.3s, width 0.3s, border-radius 0.3s;
+}
+
+.prev-button {
+  left: 0;
+  border-top-right-radius: 50px; 
+  border-bottom-right-radius: 50px; 
+}
+
+.next-button {
+  right: 0;
+  border-top-left-radius: 50px; 
+  border-bottom-left-radius: 50px; 
+}
+
+.prev-button:hover, .next-button:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 30px; 
+}
+
+.arrow-icon {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.prev-button:hover .arrow-icon, .next-button:hover .arrow-icon {
+  opacity: 1;
+}

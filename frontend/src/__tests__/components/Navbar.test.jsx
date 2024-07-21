@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('Navbar Component Tests', () => {
+    
   // Test to check if Navbar renders without crashing
     test('renders Navbar component', () => {
         const { asFragment } = render(
@@ -14,6 +15,18 @@ describe('Navbar Component Tests', () => {
         );
         const TestNavbar = screen.getByTestId('Navbar');
         expect(TestNavbar).toBeInTheDocument();
+        expect(asFragment()).toMatchSnapshot();
+    });
+
+    // Test to check if the logo is present
+    test('contains logo', () => {
+        const { asFragment } = render(
+        <Router>
+            <Navbar />
+        </Router>
+        );
+        const logo = screen.getByTestId('Logo');
+        expect(logo).toBeInTheDocument();
         expect(asFragment()).toMatchSnapshot();
     });
 
@@ -31,18 +44,6 @@ describe('Navbar Component Tests', () => {
         expect(screen.getByTestId('ShoppingCartIcon1')).toBeInTheDocument();
         expect(screen.getByTestId('AccountCircleIcon')).toBeInTheDocument();
         expect(screen.getByTestId('AccountCircleIcon1')).toBeInTheDocument();
-        expect(asFragment()).toMatchSnapshot();
-    });
-
-    // Test to check if the logo is present
-    test('contains logo', () => {
-        const { asFragment } = render(
-        <Router>
-            <Navbar />
-        </Router>
-        );
-        const logo = screen.getByTestId('Logo');
-        expect(logo).toBeInTheDocument();
         expect(asFragment()).toMatchSnapshot();
     });
 });
