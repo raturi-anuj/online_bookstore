@@ -1,0 +1,58 @@
+.overlay-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0; /* Fix at the bottom of the banner */
+  left: 5%;
+  right: 5%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px 0;
+  backdrop-filter: blur(5px); /* Optional: adds a blur effect */
+}
+
+.overlay-box {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-box h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-list a {
+  width: 45%;
+  margin: 2.5%;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.book-list img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.book-list p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.see-all {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+}

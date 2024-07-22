@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
+import OverlayContainers from '../OverlayContainers/OverlayContainers'; // Import the OverlayContainers component
 import './Banner.css';
 
 const Banner = () => {
@@ -53,6 +54,7 @@ const Banner = () => {
       <div className="next-button" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </div>
+      <OverlayContainers /> {/* Include the OverlayContainers component */}
     </Box>
   );
 };
