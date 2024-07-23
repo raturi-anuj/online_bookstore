@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
-import banner1 from '../../assets/banner1.png';
-import banner2 from '../../assets/banner2.png';
-import banner3 from '../../assets/banner3.png';
+import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
 import './Banner.css';
-
-const banners = [
-  { id: 1, src: banner1 },
-  { id: 2, src: banner2 },
-  { id: 3, src: banner3 },
-];
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [banners, setBanners] = useState([]);
+
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/banners/');
+        setBanners(response.data);
+      } catch (error) {
+        console.error('Error fetching banners:', error);
+      }
+    };
+
+    fetchBanners();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,7 +28,7 @@ const Banner = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [banners]);
 
   const handleNext = () => {
     setCurrentIndex((currentIndex + 1) % banners.length);
@@ -34,12 +41,13 @@ const Banner = () => {
   return (
     <Box className="banner-container">
       {banners.map((banner, index) => (
-        <img
-          key={banner.id}
-          src={banner.src}
-          alt={`Banner ${banner.id}`}
-          className={`banner ${index === currentIndex ? 'active' : ''}`}
-        />
+        <Link to={banner.id === 1 ? '/sale-50%' : banner.id === 2 ? '/allBooks' : '/childrenBooks'} key={banner.id}>
+          <img
+            src={banner.src}
+            alt={`Banner ${banner.id}`}
+            className={`banner ${index === currentIndex ? 'active' : ''}`}
+          />
+        </Link>
       ))}
       <div className="prev-button" onClick={handlePrev}>
         <ArrowBackIosIcon />
@@ -48,7 +56,7 @@ const Banner = () => {
         <ArrowForwardIosIcon />
       </div>
     </Box>
-  );
+  );  
 };
 
 export default Banner;
