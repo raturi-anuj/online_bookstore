@@ -56,7 +56,7 @@ const Banner = () => {
         <ArrowForwardIosIcon />
       </div>
     </Box>
-  );
-}
+  );  
+};
 
 export default Banner;
