@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
-import OverlayContainers from '../OverlayContainers/OverlayContainers'; // Import the OverlayContainers component
+import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
 import './Banner.css';
 
 const Banner = () => {
@@ -12,7 +12,7 @@ const Banner = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/banners/');
+        const response = await axios.get('http://127.0.0.1:8000/banners/');
         setBanners(response.data);
       } catch (error) {
         console.error('Error fetching banners:', error);
@@ -41,12 +41,13 @@ const Banner = () => {
   return (
     <Box className="banner-container">
       {banners.map((banner, index) => (
-        <img
-          key={banner.id}
-          src={banner.src}
-          alt={`Banner ${banner.id}`}
-          className={`banner ${index === currentIndex ? 'active' : ''}`}
-        />
+        <Link to={banner.id === 1 ? '/sale-50%' : banner.id === 2 ? '/allBooks' : '/childrenBooks'} key={banner.id}>
+          <img
+            src={banner.src}
+            alt={`Banner ${banner.id}`}
+            className={`banner ${index === currentIndex ? 'active' : ''}`}
+          />
+        </Link>
       ))}
       <div className="prev-button" onClick={handlePrev}>
         <ArrowBackIosIcon />
@@ -54,7 +55,6 @@ const Banner = () => {
       <div className="next-button" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </div>
-      <OverlayContainers /> {/* Include the OverlayContainers component */}
     </Box>
   );
 };
