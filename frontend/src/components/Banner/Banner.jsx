@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
+import OverlayContainers from '../OverlayContainers/OverlayContainers';
 import './Banner.css';
 
 const Banner = () => {
@@ -55,8 +56,9 @@ const Banner = () => {
       <div className="next-button" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </div>
+      <OverlayContainers/>
     </Box>
-  );  
+  );
 };
 
 export default Banner;
