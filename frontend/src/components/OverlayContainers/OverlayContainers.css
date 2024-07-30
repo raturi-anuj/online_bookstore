@@ -1,37 +1,48 @@
 .overlay-container {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  backdrop-filter: blur(2px);
+  height: 50%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: 0; /* Fix at the bottom of the banner */
-  left: 5%;
-  right: 5%;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  padding: 10px 0;
-  backdrop-filter: blur(5px); /* Optional: adds a blur effect */
+  align-items: flex-start;
 }
 
 .overlay-box {
   background-color: white;
   border: 1px solid #ddd;
-  padding: 10px;
-  width: 30%;
+  width: 25%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 0 10px;
+  overflow: hidden;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .overlay-box h2 {
-  font-size: 18px;
+  font-size: 20px;
+  align-items: center;
+  margin-top: 0;
   margin-bottom: 10px;
+  
+  color: #333;
 }
 
 .book-list {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
 .book-list a {
-  width: 45%;
-  margin: 2.5%;
+  width: calc(40% - 5px);
   text-align: center;
   color: inherit;
   text-decoration: none;
@@ -39,20 +50,64 @@
 
 .book-list img {
   width: 100%;
-  height: auto;
   display: block;
   margin-bottom: 5px;
 }
 
-.book-list p {
-  font-size: 14px;
-  margin: 0;
+.book-list span {
+  font-size: 12px;
+  padding: 0;
+  color: #666;
+}
+
+.title {
+  margin: 0;;
+  padding: 0;
 }
 
 .see-all {
   display: block;
   margin-top: 10px;
-  text-align: center;
-  color: blue;
+  text-align: start;
+  color: #007185;
   text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .overlay-box {
+    width: 45%;
+  }
+
+  .book-list a {
+    width: calc(50% - 5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-box {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .book-list a {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .overlay-box {
+    width: 90%;
+  }
+
+  .book-list a {
+    width: 50%;
+  }
 }

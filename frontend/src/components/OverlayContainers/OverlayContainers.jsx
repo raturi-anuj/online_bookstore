@@ -48,7 +48,7 @@ const OverlayContainers = () => {
           {discountBooks.map(book => (
             <a key={book.id} href={`/discount-books/${book.id}`}>
               <img src={book.image_url} alt={book.title} />
-              <p>{book.title}</p>
+              <span class ="title">{book.title}</span>
             </a>
           ))}
         </div>
@@ -60,7 +60,7 @@ const OverlayContainers = () => {
           {personalGrowthBooks.map(book => (
             <a key={book.id} href={`/personal-growth-books/${book.id}`}>
               <img src={book.image_url} alt={book.title} />
-              <p>{book.title}</p>
+              <span class ="title">{book.title}</span>
             </a>
           ))}
         </div>
@@ -72,7 +72,7 @@ const OverlayContainers = () => {
           {bookmarks.map(bookmark => (
             <a key={bookmark.id} href={`/bookmarks/${bookmark.id}`}>
               <img src={bookmark.image_url} alt={bookmark.title} />
-              <p>{bookmark.title}</p>
+              <span class ="title">{bookmark.title}</span>
             </a>
           ))}
         </div>
