@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
-import OverlayContainers from '../OverlayContainers/OverlayContainers';
 import './Banner.css';
+import OverlayContainers from '../OverlayContainers/OverlayContainers';
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +40,7 @@ const Banner = () => {
   };
 
   return (
-    <Box className="banner-container">
+    <Box data-testid="banner-container" className="banner-container">
       {banners.map((banner, index) => (
         <Link to={banner.id === 1 ? '/sale-50%' : banner.id === 2 ? '/allBooks' : '/childrenBooks'} key={banner.id}>
           <img
@@ -50,10 +50,10 @@ const Banner = () => {
           />
         </Link>
       ))}
-      <div className="prev-button" onClick={handlePrev}>
+      <div data-testid="prev-button" className="prev-button" onClick={handlePrev}>
         <ArrowBackIosIcon />
       </div>
-      <div className="next-button" onClick={handleNext}>
+      <div data-testid="next-button" className="next-button" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </div>
       <OverlayContainers/>

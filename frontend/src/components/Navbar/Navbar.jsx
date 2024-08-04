@@ -26,7 +26,7 @@ const Navbar = () => {
       <AppBar id="Navbar" data-testid="Navbar" position="fixed" className="AppBar" sx= {{bgcolor: "black"}}>
       <Toolbar className="Toolbar">
         <IconButton  color="inherit" aria-label="menu" className="MenuIcon">
-        <MenuIcon />
+        <MenuIcon/>
         </IconButton>
         <Link id="Logo" data-testid="Logo" to="/" className="LogoLink">
         <img src={logo} alt="Kitabae" className="Logo HoverButton" />

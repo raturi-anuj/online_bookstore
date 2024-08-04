@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Banner from './components/Banner/Banner';
 import './App.css';
+import Banner from './components/Banner/Banner';
+
 
 function App() {
   return (

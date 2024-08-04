@@ -145,3 +145,4 @@ describe('Navbar Component Tests', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 });
+
