@@ -43,12 +43,11 @@ const OverlayContainers = () => {
   return (
     <div className="overlay-container">
       <div className="overlay-box">
-        <h2>50% Discount Books</h2>
+        <h2>50% Discount </h2>
         <div className="book-list">
           {discountBooks.map(book => (
             <a key={book.id} href={`/discount-books/${book.id}`}>
               <img src={book.image_url} alt={book.title} />
-              <span class ="title">{book.title}</span>
             </a>
           ))}
         </div>
@@ -60,7 +59,6 @@ const OverlayContainers = () => {
           {personalGrowthBooks.map(book => (
             <a key={book.id} href={`/personal-growth-books/${book.id}`}>
               <img src={book.image_url} alt={book.title} />
-              <span class ="title">{book.title}</span>
             </a>
           ))}
         </div>
@@ -72,14 +70,25 @@ const OverlayContainers = () => {
           {bookmarks.map(bookmark => (
             <a key={bookmark.id} href={`/bookmarks/${bookmark.id}`}>
               <img src={bookmark.image_url} alt={bookmark.title} />
-              <span class ="title">{bookmark.title}</span>
             </a>
           ))}
         </div>
         <a className="see-all" href="/bookmarks">See all offers</a>
+      </div>
+      <div className="overlay-box">
+        <h2>New Container</h2>
+        <div className="book-list">
+          {bookmarks.map(bookmark => (
+            <a key={bookmark.id} href={`/bookmarks/${bookmark.id}`}>
+              <img src={bookmark.image_url} alt={bookmark.title} />
+            </a>
+          ))}
+        </div>
+        <a className="see-all" href="/new-container">See all offers</a>
       </div>
     </div>
   );
 };
 
 export default OverlayContainers;
+

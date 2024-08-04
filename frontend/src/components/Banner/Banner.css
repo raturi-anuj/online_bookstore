@@ -1,9 +1,9 @@
 .banner-container {
   position: relative;
   width: 100%;
-  height: 60vh; /* Use viewport height for better responsiveness */
-  overflow: hidden;
-  background-color: #f0f0f0;
+  height: 400px; 
+  overflow: visible;
+  background-color: #f0f0f0; 
   margin-top: 60px;
 }
 
@@ -15,7 +15,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  filter: brightness(0.7); /* Add a filter to fade the banner */
 }
 
 .banner.active {
@@ -24,9 +23,9 @@
 
 .prev-button, .next-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
+  top: 0;
+  bottom: 20%;
+  width: 30px; 
   z-index: 10;
   color: white;
   background-color: rgba(0, 0, 0, 0);
@@ -40,20 +39,20 @@
 
 .prev-button {
   left: 0;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px; 
+  border-bottom-right-radius: 50px; 
 }
 
 .next-button {
   right: 0;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px; 
+  border-bottom-left-radius: 50px; 
 }
 
 .prev-button:hover, .next-button:hover {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
-  width: 30px;
+  width: 30px; 
 }
 
 .arrow-icon {
@@ -65,22 +64,31 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .banner-container {
-    height: 50vh; /* Adjust height for smaller screens */
+    height: 300px;
   }
-
   .prev-button, .next-button {
-    width: 25px; /* Adjust button size for smaller screens */
+    width: 25px;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 401px) and (max-width: 830px) {
   .banner-container {
-    height: 40vh; /* Adjust height for even smaller screens */
+    height: 200px;
   }
-
   .prev-button, .next-button {
-    width: 20px; /* Adjust button size for even smaller screens */
+    width: 20px;
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner-container {
+    height: 150px;
+    margin-top: 30px;
+  }
+  .prev-button, .next-button {
+    display: none; /* Hide buttons on very small screens */
   }
 }
