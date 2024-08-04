@@ -7,7 +7,7 @@ import Banner from './Banner';
 jest.mock('axios');
 
 describe('Banner Component', () => {
-  const mockBanners = [
+  const mockBanners = [ 
     { id: 1, src: 'https://i.imgur.com/UyIMoX4.jpg' },
     { id: 2, src: 'https://i.imgur.com/47obsLa.jpeg' },
     { id: 3, src: 'https://i.imgur.com/6zyyBVj.jpg' },
