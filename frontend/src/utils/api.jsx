@@ -24,3 +24,14 @@ export const signUp = async (mobile, email, password) => {
     throw error.response.data;
   }
 };
+
+// Function to fetch books
+export const getBooks = async () => {
+  try {
+    const response = await api.get('/books');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching books:', error);
+    throw error.response.data;
+  }
+};

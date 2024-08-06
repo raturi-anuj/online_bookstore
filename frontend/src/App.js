@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Banner from './components/Banner/Banner';
 import Auth from './components/Auth/Auth'; 
 import './App.css';
+import BookSwiper from './components/BookSwiper/BookSwiper';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Banner />} />
         <Route path="/signin" element={<Auth />} /> 
       </Routes>
+      <BookSwiper/>
     </div>
   );
 }
