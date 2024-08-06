@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Auth.css';
 import { TextField, Button } from '@mui/material';
-import { signIn, signUp } from './api'; // Import the API functions
+import { signIn, signUp } from '../../utils/api'; 
 
 const Auth = () => {
   const [signInState, setSignInState] = useState(true);
