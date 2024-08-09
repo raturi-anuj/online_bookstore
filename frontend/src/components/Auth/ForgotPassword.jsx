@@ -60,7 +60,7 @@ const ForgotPassword = () => {
         background: "white",
         borderRadius: "8px",
         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-        padding: "30px 20px",
+        padding: "40px 20px", // Increased height by adding padding
         marginTop: "100px", // Position below navbar
         border: "1px solid rgba(0, 0, 0, 0.2)",
         borderImage:
@@ -107,15 +107,15 @@ const ForgotPassword = () => {
               onClick={handleSendOtp}
               style={{
                 marginTop: "20px",
-                backgroundColor: "magenta",
+                backgroundColor: "#800080",
                 color: "#fff",
                 padding: "10px 0",
                 borderRadius: "4px",
                 fontWeight: "bold",
                 transition: "background-color 0.3s ease",
               }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#d400d4")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "magenta")}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#DDA0DD")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#800080")}
             >
               Send OTP
             </Button>
