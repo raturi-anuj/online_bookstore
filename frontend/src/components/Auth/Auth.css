@@ -1,235 +1,67 @@
-:root {
-    --primary-color: rgba(156,58,107);
-    --secondary-color:  rgba(156,58,107);
-    --black: #000000;
-    --white: #ffffff;
-    --gray: #efefef;
-    --gray-2: #757575;
-  }
-  
-  
-  html, body {
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  .container {
-    position: relative;
-    min-height: calc(100vh - 70px); /* Adjusting height to fit below navbar */
-    padding-top: 64px; /* Space for the fixed navbar */
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-  }
-  
-  .col {
-    width: 50%;
-  }
-  
-  .align-items-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .form-wrapper {
-    width: 80%;
-    max-width: 28rem;
-    overflow-y: auto; /* Allows vertical scrolling if content exceeds max height */
-  }
-  
-  .form {
-    padding: 1rem;
-    background-color: var(--white);
-    border-radius: 1.5rem;
-    width: 90%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transform: scale(0);
-    transition: .5s ease-in-out;
-    transition-delay: 1s;
-  }
-  
-  .input-group {
-    position: relative;
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-  
-  .input-group i {
-    position: absolute;
-    top: 30%;
-    left: 1rem;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    color: var(--gray-2);
-  }
-  
-  .input-group input {
-    width: 100%;
-    font-size: 1rem;
-    background-color: var(--gray);
-    border-radius: .5rem;
-    border: 0.125rem solid var(--white);
-    outline: none;
-  }
-  
-  .input-group input:focus {
-    border: 0.125rem solid var(--primary-color);
-  }
-  
-  .form button {
-    cursor: pointer;
-    width: 80%;
-    border-radius: .5rem;
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--white);
-    font-size: 1rem;
-    outline: none;
-  }
-  
-  .account-exist {
-    margin-bottom: 1px;
-  }
-  
-  .form p {
-    margin: 0.5rem 0;
-    font-size: .7rem;
-  }
-  
-  .flex-col {
-    flex-direction: column;
-    margin-top: 64px;
-  }
-  
-  .pointer {
-    cursor: pointer;
-  }
-  
-  .container.sign-in .form.sign-in,
-  .container.sign-in .social-list.sign-in,
-  .container.sign-in .social-list.sign-in>div,
-  .container.sign-up .form.sign-up,
-  .container.sign-up .social-list.sign-up,
-  .container.sign-up .social-list.sign-up>div{
-    transform: scale(1);
-  }
-  
-  .content-row {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 6;
-    width: 100%;
-  }
-  
-  .text {
-    margin: 4rem;
-    color: var(--white);
-  }
-  
-  .text h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 2rem 0;
-    transition: 1s ease-in-out;
-  }
-  
-  .text p {
-    font-weight: 600;
-    transition: 1s ease-in-out;
-    transition-delay: .2s;
-  }
-  
-  .img img {
-    width: 30vw;
-    transition: 1s ease-in-out;
-    transition-delay: .4s;
-  }
-  
-  .text.sign-in h2,
-  .text.sign-in p,
-  .img.sign-in img {
-    transform: translateX(-250%);
-  }
-  
-  .text.sign-up h2,
-  .text.sign-up p,
-  .img.sign-up img {
-    transform: translateX(250%);
-  }
-  
-  .container.sign-in .text.sign-in h2,
-  .container.sign-in .text.sign-in p,
-  .container.sign-in .img.sign-in img,
-  .container.sign-up .text.sign-up h2,
-  .container.sign-up .text.sign-up p,
-  .container.sign-up .img.sign-up img{
-    transform: translateX(0);
-  }
-  
-  /*BACKGROUND*/
-  
-  .container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 300vw;
-    transform: translate(35%, 0);
-    background-image: linear-gradient(-45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    transition: 1s ease-in-out;
-    z-index: 6;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-bottom-right-radius: max(50vh, 50vh);
-    border-top-left-radius: max(50vh, 50vh);
-  }
-  
-  .container.sign-in::before {
-    transform: translate(0,0);
-    right: 50%;
-  }
-  
-  .container.sign-up::before {
-    transform: translate(100%, 0);
-    right: 50%;
-  }
-  
-  /* RESPONSIVE */
-  
-  @media only screen and (max-width: 768px) {
-    .form-wrapper {
-        max-width: 22rem;
-    }
-    .img img {
-      width: 40vw;
-    }
-    .text h2 {
-      font-size: 3rem;
-    }
-  }
-  
-  @media only screen and (max-width: 425px) {
-    .form-wrapper {
-        max-width: 100%;
-    }
-    .img img {
-      display: none;
-    }
-    .text h2 {
-      font-size: 2rem;
-    }
-    .row {
-        display: block;
-    }
-    .col {
-        width: 100%;
-    }
-  }
-  
+/* Form container styles */
+form-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px; /* Increased height by adding padding */
+  margin-top: 100px; /* Position below navbar */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)) 1;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Add spacing between elements */
+form-container .MuiFormControl-root,
+form-container .submit-button {
+  margin-bottom: 20px; /* Space between elements */
+}
+
+/* Transition for the form appearance */
+form-container {
+  transition: all 0.3s ease-in-out;
+}
+
+form-container:hover {
+  transform: scale(1.02);
+}
+
+/* Input field styles */
+input-field {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input-field:focus {
+  border-color: #ff9900; /* Bright opaque border color */
+}
+
+/* Submit button styles */
+.submit-button {
+  background-color: black; /* Black color for button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover,
+.submit-button:active {
+  background-color: #DDA0DD; /* Slate gray on hover or click */
+}
+
+/* Underline on hover/click for links */
+.link {
+  color: #007185;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: text-decoration 0.2s ease;
+}
+
+.link:hover,
+.link:active {
+  text-decoration: underline;
+}
