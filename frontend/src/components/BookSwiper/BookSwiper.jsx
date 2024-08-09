@@ -1,48 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
+import React, { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
 import './BookSwiper.css';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import { getBooks } from '../../utils/api';
 
 const BookSwiper = () => {
   const [books, setBooks] = useState([]);
+  const swiperRef = useRef(null);
 
+  // Fetch books from backend
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const data = await getBooks();
-        setBooks(data);
+        const response = await axios.get('http://localhost:5000/books'); // Adjust the URL if needed
+        setBooks(response.data);
       } catch (error) {
-        console.error('Failed to fetch books', error);
+        console.error('Error fetching books:', error);
       }
     };
-
+    
     fetchBooks();
   }, []);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <div className="nextArrow">Next</div>,
-    prevArrow: <div className="prevArrow">Prev</div>,
-  };
+  // Handle continuous scroll
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (swiperRef.current) {
+        swiperRef.current.scrollBy({
+          left: 200, // Adjust the scroll speed as needed
+          behavior: 'smooth',
+        });
+
+        // If the end is reached, scroll back to the start
+        if (swiperRef.current.scrollLeft + swiperRef.current.clientWidth >= swiperRef.current.scrollWidth) {
+          swiperRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      }
+    }, 2000); // Adjust the interval as needed
+
+    return () => clearInterval(interval);
+  }, [books]);
 
   return (
-    <div className="book-swiper">
-      <h2>Blockbuster Deals</h2>
-      <a href="#see-all" className="see-all-deals">See all deals</a>
-      <Slider {...settings}>
-        {books.map(book => (
-          <div key={book.id} className="book-item">
-            <img src={book.image} alt={book.title} />
-            <h3>{book.title}</h3>
+    <div className="book-swiper-container">
+      <div className="book-swiper" ref={swiperRef}>
+        {books.map((book, index) => (
+          <div key={index} className="book-item">
+            <img src={book.imageUrl} alt={book.title} />
           </div>
         ))}
-      </Slider>
+      </div>
     </div>
   );
 };
