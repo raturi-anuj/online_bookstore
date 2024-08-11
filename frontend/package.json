@@ -15,7 +15,10 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.25.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11",
+    "swiper": "^11.1.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -48,9 +51,8 @@
     "@babel/preset-react": "^7.24.7",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "babel-jest": "^29.7.0",
     "jest": "^27.5.1"
   }
-  
 }

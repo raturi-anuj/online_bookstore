@@ -1,0 +1,134 @@
+.book-swiper {
+  position: relative;
+  width: 100%;
+  margin-top: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.swiper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.swiper-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.see-all-link {
+  float: right;
+  font-size: 14px;
+  text-decoration: none;
+  color: #007185;
+}
+
+.swiper-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
+  margin-right: 4px;
+}
+
+.swiper-slide {
+  flex: 0 0 15%;
+  margin-right: 5px;
+  position: relative;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 10px;
+  text-decoration: none!important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.book-details {
+  margin-top: 10px;
+}
+
+.book-discount {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.sale-label {
+  color: #d32f2f;
+}
+
+.book-price {
+  font-weight: bold;
+  color: #212121;
+}
+
+.book-mrp {
+  text-decoration: line-through;
+  color: #757575;
+  margin-left: 5px;
+}
+
+.book-title {
+  color: #616161;
+  margin-top: 5px;
+}
+
+.prev-button, .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 50%;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+.book-card {
+  position: relative;
+}
+
+.add-cart-btn {
+  position: absolute;
+  bottom: 10px;
+  left:90%;
+  background-color: #f50057; 
+  color: white;
+  padding: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-cart-btn:hover {
+  background-color: #c51162; 
+}
+
+
+.see-all-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #007185;
+  margin-right: 10px; 
+}

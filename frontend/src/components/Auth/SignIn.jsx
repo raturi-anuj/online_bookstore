@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, TextField, Container, Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import white_logo from "../../assets/white_logo.png";
 import "./Auth.css"; // Assuming you have a shared CSS file for Auth pages
 
 const SignIn = () => {
@@ -23,7 +23,7 @@ const SignIn = () => {
       }}
     >
       <Box display="flex" justifyContent="center" mb={2}>
-        <img src={logo} alt="Logo" style={{ width: "150px", height: "auto" }} />
+        <img src={white_logo} alt="Logo" style={{ width: "150px", height: "auto" }} />
       </Box>
 
       <Typography component="h1" variant="h5" align="center">
