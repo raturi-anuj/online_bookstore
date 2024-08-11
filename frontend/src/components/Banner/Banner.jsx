@@ -11,6 +11,7 @@ const Banner = () => {
   const [banners, setBanners] = useState([]);
 
   useEffect(() => {
+    // Fetch banners from the server
     const fetchBanners = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/banners/');
@@ -24,18 +25,22 @@ const Banner = () => {
   }, []);
 
   useEffect(() => {
+    // Automatically switch to the next banner every 3 seconds
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % banners.length);
     }, 3000);
 
+    // Clean up the interval when the component is unmounted
     return () => clearInterval(interval);
   }, [banners]);
 
   const handleNext = () => {
+    // Go to the next banner
     setCurrentIndex((currentIndex + 1) % banners.length);
   };
 
   const handlePrev = () => {
+    // Go to the previous banner
     setCurrentIndex((currentIndex - 1 + banners.length) % banners.length);
   };
 

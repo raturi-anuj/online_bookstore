@@ -6,6 +6,9 @@ const OverlayContainers = () => {
   const [discountBooks, setDiscountBooks] = useState([]);
   const [personalGrowthBooks, setPersonalGrowthBooks] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [comics, setComics] = useState([]);
+
 
   useEffect(() => {
     const fetchDiscountBooks = async () => {
@@ -35,9 +38,18 @@ const OverlayContainers = () => {
       }
     };
 
+    const fetchComics = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/comics/');
+        setComics(response.data);
+      } catch (error) {
+        console.error('Error fetching comics:', error);
+      }
+    };
     fetchDiscountBooks();
     fetchPersonalGrowthBooks();
     fetchBookmarks();
+    fetchComics();
   }, []);
 
   return (
@@ -76,15 +88,15 @@ const OverlayContainers = () => {
         <a className="see-all" href="/bookmarks">See all offers</a>
       </div>
       <div className="overlay-box">
-        <h2>New Container</h2>
+        <h2>Comics </h2>
         <div className="book-list">
-          {bookmarks.map(bookmark => (
-            <a key={bookmark.id} href={`/bookmarks/${bookmark.id}`}>
-              <img src={bookmark.image_url} alt={bookmark.title} />
+          {discountBooks.map(book => (
+            <a key={book.id} href={`/comics/${book.id}`}>
+              <img src={book.image_url} alt={book.title} />
             </a>
           ))}
         </div>
-        <a className="see-all" href="/new-container">See all offers</a>
+        <a className="see-all" href="/comics">See all offers</a>
       </div>
     </div>
   );

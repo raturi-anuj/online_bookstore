@@ -7,6 +7,8 @@
   margin-top: 60px;
 }
 
+
+/* Styles for the banner images */
 .banner {
   width: 100%;
   height: 100%;
@@ -17,10 +19,12 @@
   left: 0;
 }
 
+/* Styles for the active banner image */
 .banner.active {
   opacity: 1;
 }
 
+/* Styles for the previous and next buttons */
 .prev-button, .next-button {
   position: absolute;
   top: 0;
@@ -37,33 +41,39 @@
   transition: opacity 0.3s, background-color 0.3s, width 0.3s, border-radius 0.3s;
 }
 
+/* Styles for the previous button */
 .prev-button {
   left: 0;
   border-top-right-radius: 50px; 
   border-bottom-right-radius: 50px; 
 }
 
+/* Styles for the next button */
 .next-button {
   right: 0;
   border-top-left-radius: 50px; 
   border-bottom-left-radius: 50px; 
 }
 
+/* Styles for the previous and next buttons on hover */
 .prev-button:hover, .next-button:hover {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
   width: 30px; 
 }
 
+/* Styles for the arrow icon on hover */
 .arrow-icon {
   opacity: 1;
   transition: opacity 0.3s;
 }
 
+/* Styles for the arrow icon on hover for previous and next buttons */
 .prev-button:hover .arrow-icon, .next-button:hover .arrow-icon {
   opacity: 1;
 }
 
+/* Media query for screens with max width of 1200px */
 @media (max-width: 1200px) {
   .banner-container {
     height: 300px;
@@ -73,6 +83,7 @@
   }
 }
 
+/* Media query for screens with min width of 401px and max width of 830px */
 @media (min-width: 401px) and (max-width: 830px) {
   .banner-container {
     height: 200px;
@@ -83,6 +94,7 @@
   }
 }
 
+/* Media query for screens with max width of 400px */
 @media (max-width: 400px) {
   .banner-container {
     height: 150px;
