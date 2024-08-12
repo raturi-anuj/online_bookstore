@@ -3,9 +3,9 @@ import { Box, IconButton, Typography, Link } from "@mui/material";
 import {
   ArrowBackIos as ArrowBackIosIcon,
   ArrowForwardIos as ArrowForwardIosIcon,
-  Add as AddIcon 
+  Add as AddIcon,
 } from "@mui/icons-material";
-import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink for internal navigation
+import { Link as RouterLink } from "react-router-dom";
 import "./BookSwiper.css";
 
 const BookSwiper = () => {
@@ -48,9 +48,9 @@ const BookSwiper = () => {
         </IconButton>
         <div className="swiper-wrapper">
           {visibleBooks.map((book, index) => (
-            <RouterLink 
-              key={index} 
-              to={`/book-description/${book.id}`}
+            <RouterLink
+              key={index}
+              to={`/book-description/${book.id}`} // Updated to redirect to BookDescription page
               className="swiper-slide"
             >
               <img src={book.image_url} alt={`Book ${index + 1}`} />
@@ -68,7 +68,7 @@ const BookSwiper = () => {
                   </span>
                 </Typography>
                 <Typography variant="body2" className="book-title">
-                  {book.title}
+                  {book.title}{" "}
                 </Typography>
                 <IconButton className="add-to-cart">
                   <AddIcon />
