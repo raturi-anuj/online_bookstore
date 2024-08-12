@@ -1,0 +1,39 @@
+.cart-page-container {
+  padding: 20px;
+  margin-top: 5%;
+}
+
+.cart-heading {
+  margin-bottom: 20px;
+}
+
+.cart-table-container {
+  margin-bottom: 20px;
+}
+
+.product-cell {
+  display: flex;
+  align-items: center;
+}
+
+.cart-book-image {
+  height: 80px;
+  width: auto;
+  margin-right: 16px;
+}
+
+.cart-book-title {
+  vertical-align: top; /* Ensures title is aligned at the top */
+}
+
+.quantity-select {
+  width: 100px;
+}
+
+.cart-total {
+  margin-top: 20px;
+}
+
+.checkout-button {
+  margin-top: 20px;
+}
