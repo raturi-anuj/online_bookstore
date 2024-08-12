@@ -1,7 +1,7 @@
 .book-swiper {
   position: relative;
   width: 100%;
-  margin-top: 20%;
+  margin-top: 22%;
   padding: 10px;
   box-sizing: border-box;
   background-color: white;
@@ -32,7 +32,7 @@
 .swiper-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
   position: relative;
 }
@@ -40,11 +40,10 @@
 .swiper-wrapper {
   display: flex;
   transition: transform 0.3s ease;
-  margin-right: 4px;
 }
 
 .swiper-slide {
-  flex: 0 0 15%;
+  flex: 0 0 20%;
   margin-right: 5px;
   position: relative;
   background-color: white;
@@ -88,6 +87,7 @@
 .book-title {
   color: #616161;
   margin-top: 5px;
+  text-decoration: none;
 }
 
 .prev-button, .next-button {
@@ -114,7 +114,7 @@
 .add-cart-btn {
   position: absolute;
   bottom: 10px;
-  left:90%;
+  left: 90%;
   background-color: #f50057; 
   color: white;
   padding: 5px;
@@ -125,10 +125,34 @@
   background-color: #c51162; 
 }
 
-
 .see-all-link {
   font-size: 14px;
   text-decoration: none;
   color: #007185;
   margin-right: 10px; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .swiper-slide {
+    flex: 0 0 30%; /* Show 3 books at a time */
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+  .swiper-slide {
+    flex: 0 0 25%; /* Show 4 books at a time */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .swiper-slide {
+    flex: 0 0 20%; /* Show 5 books at a time */
+  }
+}
+
+@media (min-width: 901px) {
+  .swiper-slide {
+    flex: 0 0 15%; /* Show 6 books at a time */
+  }
 }
