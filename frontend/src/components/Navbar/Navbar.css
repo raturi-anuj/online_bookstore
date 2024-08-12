@@ -90,10 +90,13 @@
 
 .IconButton {
   border: 1px solid #ddd;
+  position: relative; /* Ensure the badge is positioned relative to this button */
 }
+
 
 .IconButton:hover {
   border: 1px solid #ddd;
+  position: relative;
 }
 
 .LoginButton {
@@ -141,8 +144,8 @@
 
 .CartCount {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5px; /* Adjusted to align with the icon better */
+  right: -10px; /* Adjusted to position it properly */
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -152,7 +155,9 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  font-weight: bold; /* Optional, to make the number more prominent */
 }
+
 
 /* Media Queries for Responsiveness */
 

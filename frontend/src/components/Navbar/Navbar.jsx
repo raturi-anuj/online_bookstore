@@ -32,7 +32,7 @@ const Navbar = () => {
           const response = await fetch('/cart/');
           if (response.ok) {
               const data = await response.json();
-              setCartCount(data.item_count);
+              setCartCount(data.item_count || 0); // Set default to 0 if item_count is undefined
           } else {
               console.error('Failed to fetch cart count');
           }
