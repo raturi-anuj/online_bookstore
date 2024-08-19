@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Add useEffect
+import React, { useState, useEffect } from "react"; 
 import { Box, IconButton, Typography, Link } from "@mui/material";
 import {
   ArrowBackIos as ArrowBackIosIcon,
@@ -6,14 +6,14 @@ import {
   Add as AddIcon,
 } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
-import "./BookSwiper.css";
+import "./BookSwiper1.css";
 
-const BookSwiper = () => {
+const BookSwiper1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [bookUrls, setBookUrls] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/swiper-book-urls/")
+    fetch("http://localhost:8000/swiper_1/")
       .then((response) => response.json())
       .then((data) => setBookUrls(data));
   }, []);
@@ -28,6 +28,35 @@ const BookSwiper = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prevIndex) => prevIndex - 1);
     }
+  };
+
+  const handleAddToCart = (event, bookId) => {
+    event.preventDefault(); // Prevent triggering the RouterLink navigation
+  
+    // Define the API endpoint for adding to the cart
+    const endpoint = `http://localhost:8000/cart/add/`;
+    
+    // Make the API request to add the book to the cart
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}` // Include token if using authentication
+      },
+      body: JSON.stringify({ bookId: bookId })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log(`Book with ID ${bookId} added to cart successfully.`);
+          // Optionally, update UI or show a success message
+        } else {
+          console.error('Failed to add book to cart:', data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error adding book to cart:', error);
+      });
   };
 
   const visibleBooks = bookUrls.slice(currentIndex, currentIndex + 6);
@@ -50,7 +79,7 @@ const BookSwiper = () => {
           {visibleBooks.map((book, index) => (
             <RouterLink
               key={index}
-              to={`/book-description/${book.id}`} // Updated to redirect to BookDescription page
+              to={`/book-description/${book.id}`}
               className="swiper-slide"
             >
               <img src={book.image_url} alt={`Book ${index + 1}`} />
@@ -68,9 +97,12 @@ const BookSwiper = () => {
                   </span>
                 </Typography>
                 <Typography variant="body2" className="book-title">
-                  {book.title}{" "}
+                  {book.title}
                 </Typography>
-                <IconButton className="add-to-cart">
+                <IconButton
+                  className="add-to-cart"
+                  onClick={(event) => handleAddToCart(event, book.id)}
+                >
                   <AddIcon />
                 </IconButton>
               </div>
@@ -85,4 +117,4 @@ const BookSwiper = () => {
   );
 };
 
-export default BookSwiper;
+export default BookSwiper1;

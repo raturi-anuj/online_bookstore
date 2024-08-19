@@ -1,0 +1,88 @@
+.contact-us-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contact-us-container::before {
+    content: '';
+    background-image: url('../../assets/white_logo.png');
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Set z-index to 0 to place it behind the content */
+  }
+  
+  h2, p, .contact-form {
+    position: relative;
+    z-index: 1; /* Ensure form content appears above the background */
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1; 
+  }
+  
+  textarea {
+    min-height: 120px;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .success-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+  }
+  

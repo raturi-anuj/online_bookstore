@@ -1,6 +1,5 @@
 .overlay-container {
   position: absolute;
-  top: 85%;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
@@ -77,7 +76,6 @@
 
 @media (max-width: 1200px) {
   .overlay-container {
-    top: 80%;
     padding: 8px;
     justify-content: space-evenly;
     justify-items: center;
@@ -97,7 +95,6 @@
 
 @media (min-width: 501px) and (max-width: 849px) {
   .overlay-container {
-    bottom: -85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -111,12 +108,9 @@
   }
 }
 
-
-
 @media (max-width: 500px) {
   .overlay-container {
     width: 100%;
-    top: 70%;
     padding: 2px;
     display:inline-block;
     justify-content: space-evenly;

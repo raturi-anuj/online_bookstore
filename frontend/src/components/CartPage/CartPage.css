@@ -32,8 +32,23 @@
 
 .cart-total {
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .checkout-button {
   margin-top: 20px;
 }
+
+/* New styles for the delete icon */
+.MuiIconButton-root {
+  padding: 0;
+}
+
+.MuiSvgIcon-root {
+  font-size: 1.5rem;
+}
+
+.MuiTableCell-root {
+  padding: 16px; /* Ensures proper padding around table cells */
+}
+

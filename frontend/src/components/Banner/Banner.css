@@ -44,15 +44,17 @@
 /* Styles for the previous button */
 .prev-button {
   left: 0;
-  border-top-right-radius: 50px; 
-  border-bottom-right-radius: 50px; 
+  height: 50%;
+  border-top-right-radius: 50px!important; 
+  border-bottom-right-radius: 50px!important; 
 }
 
 /* Styles for the next button */
 .next-button {
   right: 0;
-  border-top-left-radius: 50px; 
-  border-bottom-left-radius: 50px; 
+  height: 50%;
+  border-top-left-radius: 50px!important; 
+  border-bottom-left-radius: 50px!important;  
 }
 
 /* Styles for the previous and next buttons on hover */
