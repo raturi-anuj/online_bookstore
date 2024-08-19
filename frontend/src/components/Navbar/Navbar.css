@@ -8,6 +8,28 @@
   align-items: center;
 }
 
+.MuiMenu-paper {
+  background-color: black;
+  color: white;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+.MuiMenuItem-root {
+  &:hover {
+    background-color: #333;
+  }
+}
+
+.DropdownMenu .MuiMenuItem-root {
+  font-size: 14px;
+}
+
+.DropdownMenu .MuiMenuItem-root[disabled] {
+  font-weight: bold;
+  color: #888;
+}
+
 .LogoLink {
   display: flex;
   align-items: center;
