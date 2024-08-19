@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Box, TextField } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Box, TextField, Menu, MenuItem } from '@mui/material';
 import { Menu as MenuIcon, LocationOn as LocationOnIcon, Search as SearchIcon, Favorite as FavoriteIcon, ShoppingCart as ShoppingCartIcon, AccountCircle as AccountCircleIcon } from '@mui/icons-material';
 import Autocomplete from '@mui/material/Autocomplete';
 import Tooltip from '@mui/material/Tooltip';
@@ -15,6 +15,9 @@ import './Navbar.css';
 const Navbar = () => {
   // Define state to hold the cart count
   const [cartCount, setCartCount] = useState(0);
+
+  // State for dropdown menu
+  const [anchorEl, setAnchorEl] = useState(null);
 
   // Function to handle focus
   const handleFocus = () => {
@@ -45,12 +48,41 @@ const Navbar = () => {
       fetchCartCount();
   }, []);
 
+  // Function to handle menu click
+  const handleMenuClick = (event) => {
+      setAnchorEl(event.currentTarget);
+  };
+
+  // Function to handle menu close
+  const handleMenuClose = () => {
+      setAnchorEl(null);
+  };
+
   return (
       <AppBar id="Navbar" data-testid="Navbar" position="fixed" className="AppBar" sx={{ bgcolor: "black" }}>
           <Toolbar className="Toolbar">
-              <IconButton color="inherit" aria-label="menu" className="MenuIcon">
+              <IconButton color="inherit" aria-label="menu" className="MenuIcon" onClick={handleMenuClick}>
                   <MenuIcon />
               </IconButton>
+              <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  className="DropdownMenu"
+              >
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/">Home</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/about">About Us</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/contact">Contact Us</MenuItem>
+                  <MenuItem disabled>Genres</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/category/personal-growth">Personal Growth</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/category/mythology">Mythology</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/category/motivation">Motivation</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/category/kids">Kids</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/category/finance">Finance</MenuItem>
+                  <MenuItem disabled>Other Categories</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/bookmarks">Bookmarks</MenuItem>
+                  <MenuItem onClick={handleMenuClose} component={Link} to="/comics">Comics</MenuItem>
+              </Menu>
               <Link id="Logo" data-testid="Logo" to="/" className="LogoLink">
                   <img src={logo} alt="Kitabae" className="Logo HoverButton" />
               </Link>
@@ -74,7 +106,6 @@ const Navbar = () => {
                               ...params.InputProps,
                               startAdornment: <SearchIcon id="SearchIcon" data-testid="SearchIcon" position="start" />,
                           }}
-                          /* Search Bar- custom styling */
                           variant="outlined"
                           size="small"
                           className="SearchBar"
