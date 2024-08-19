@@ -1,7 +1,7 @@
-.book-swiper {
+.book-swiper2 {
   position: relative;
   width: 100%;
-  margin-top: 22%;
+  margin-top: 3%;
   padding: 10px;
   box-sizing: border-box;
   background-color: white;
@@ -9,7 +9,7 @@
   border-radius: 4px;
 }
 
-.swiper-header {
+.swiper-header2 {
   display: flex;
   justify-content: space-between;
   align-items: center;

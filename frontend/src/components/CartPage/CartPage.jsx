@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import { Box, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem } from '@mui/material';
+import { Box, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete'; 
 import './CartPage.css';
 
 const CartPage = () => {
@@ -39,6 +40,12 @@ const CartPage = () => {
     Cookies.set('cart', JSON.stringify(updatedCart), { expires: 7 });
   };
 
+  const handleRemoveItem = (bookId) => {
+    const updatedCart = cartItems.filter(item => item.book_id !== bookId);
+    setCartItems(updatedCart);
+    Cookies.set('cart', JSON.stringify(updatedCart), { expires: 7 });
+  };
+
   return (
     <Box className="cart-page-container">
       <Typography variant="h4" className="cart-heading">Your Bag ({cartItems.length} items)</Typography>
@@ -50,6 +57,7 @@ const CartPage = () => {
               <TableCell>Price</TableCell>
               <TableCell>Quantity</TableCell>
               <TableCell>Total</TableCell>
+              <TableCell></TableCell> {/* Empty cell for delete icon */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -80,6 +88,11 @@ const CartPage = () => {
                     </Select>
                   </TableCell>
                   <TableCell>₹{total}</TableCell>
+                  <TableCell>
+                    <IconButton onClick={() => handleRemoveItem(item.book_id)} color="secondary">
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
                 </TableRow>
               );
             })}

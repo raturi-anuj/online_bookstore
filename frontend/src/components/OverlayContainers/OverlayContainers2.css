@@ -1,0 +1,131 @@
+.overlay-container2 {
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin-top: 3%;
+    backdrop-filter: blur(2px);
+    height: auto;
+    width: 100%;  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+  
+  .overlay-box2 {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ddd;
+    flex: 1;
+    max-width: 24%; /* Adjusted to accommodate 4 boxes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  
+  .overlay-box2 h2 {
+    font-size: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .book-list2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: stretch;
+  }
+  
+  .book-list2 a {
+    width: calc(40% - 5px);
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .book-list2 img {
+    width: 67.59px;
+    height: 101.39px;
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+  
+  
+  .see-all2 {
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+    text-align: start;
+    color: #007185;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .see-all2:hover {
+    color:red;
+  }
+  
+  
+  @media (max-width: 1200px) {
+    .overlay-container {
+      padding: 8px;
+      justify-content: space-evenly;
+      justify-items: center;
+      align-content: space-evenly;
+      align-items: stretch;
+    }
+    .overlay-box {
+      max-width: 40%; /* Adjust for fewer boxes per row */
+      margin: 0 5px;
+      padding: 8px;
+    }
+    .book-list img {
+      width: 60px;
+      height: 90px;
+    }
+  }
+  
+  @media (min-width: 501px) and (max-width: 849px) {
+    .overlay-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: space-evenly;
+    }
+  
+    .overlay-box {
+      width: 45%;
+      margin: 10px 2.5%; 
+      box-sizing: border-box; 
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .overlay-container {
+      width: 100%;
+      padding: 2px;
+      display:inline-block;
+      justify-content: space-evenly;
+      justify-items: center;
+      align-content: space-evenly;
+      align-items: stretch;
+    }
+    .overlay-box {
+      max-width: 500px;
+      margin: 2px 0; /* Adjust margin for tighter spacing */
+      padding: 2px;
+    }
+    .book-list img {
+      width: 45px;
+      height: 67.5px;
+    }
+  }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './OverlayContainers.css';
+import './OverlayContainers1.css';
 
-const OverlayContainers = () => {
+const OverlayContainers1 = () => {
   const [discountBooks, setDiscountBooks] = useState([]);
   const [personalGrowthBooks, setPersonalGrowthBooks] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
@@ -102,5 +102,5 @@ const OverlayContainers = () => {
   );
 };
 
-export default OverlayContainers;
+export default OverlayContainers1;
 

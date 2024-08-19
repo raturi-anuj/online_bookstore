@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { ArrowBackIos as ArrowBackIosIcon, ArrowForwardIos as ArrowForwardIosIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
 import './Banner.css';
-import OverlayContainers from '../OverlayContainers/OverlayContainers';
+// import OverlayContainers1 from '../OverlayContainers/OverlayContainers1';
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,7 +61,7 @@ const Banner = () => {
       <div data-testid="next-button" className="next-button" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </div>
-      <OverlayContainers/>
+      {/* <OverlayContainers1/> */}
     </Box>
   );
 };
