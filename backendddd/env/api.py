@@ -45,7 +45,53 @@ comics = [
     {"id": 4, "title": "Document Book 4", "image_url": "http://imgur.com/AM29kqr.jpg"}
 ]
 
-book_urls = [
+# Dummy data for Finance books
+finance_books = [
+    {"id": 1, "title": "Leading Back", "image_url": "https://i.imgur.com/GMO9fpe.jpg"},
+    {"id": 2, "title": "Corporate Finance", "image_url": "https://i.imgur.com/nOj0XCp.jpg"},
+    {"id": 3, "title": "Essential Finance", "image_url": "https://imgur.com/jKwMzfi.jpg"},
+    {"id": 4, "title": "Document Book 4", "image_url": "http://imgur.com/AM29kqr.jpg"}
+]
+
+# Dummy data for Kids books
+kids_books = [
+    {"id": 1, "title": "Art of Self-Transform", "image_url": "https://i.imgur.com/ZkMWxoz.jpg"},
+    {"id": 2, "title": "Personal Growth and Training", "image_url": "https://i.imgur.com/9GLdeAL.jpg"},
+    {"id": 3, "title": "Non-traditional Methods", "image_url": "https://i.imgur.com/779fPod.jpg"},
+    {"id": 4, "title": "Insights on Personal Growth", "image_url": "https://i.imgur.com/eQJ8nJL.jpg"}
+]
+
+# Dummy data for Motivation books
+motivation_books = [
+    {"id": 1, "title": "Magnetic Page Makers", "image_url": "https://i.imgur.com/eQJ8nJL.jpg"},
+    {"id": 2, "title": "MACRO Book Maniac", "image_url": "https://imgur.com/GkB8mx3.jpg"},
+    {"id": 3, "title": "Van Gogh Bookmark", "image_url": "https://i.imgur.com/xnFH6i6.jpg"},
+    {"id": 4, "title": "Malpe Leaf Bookmark", "image_url": "https://i.imgur.com/KVUgVe1.jpg"}
+]
+
+# Dummy data for Mythology books
+mythology_books = [
+    {"id": 1, "title": "Leading Back", "image_url": "https://i.imgur.com/GMO9fpe.jpg"},
+    {"id": 2, "title": "Corporate Finance", "image_url": "https://i.imgur.com/nOj0XCp.jpg"},
+    {"id": 3, "title": "Essential Finance", "image_url": "https://imgur.com/jKwMzfi.jpg"},
+    {"id": 4, "title": "Document Book 4", "image_url": "http://imgur.com/AM29kqr.jpg"}
+]
+
+
+book_urls1 = [
+    {"id": 1, "title": "Warren Buffet Accounting", "image_url": "https://www.bookswagon.com/productimages/images200/150/9781939370150.jpg"},
+    {"id": 2, "title": "100 to 1", "image_url": "https://www.bookswagon.com/productimages/images200/293/9781626540293.jpg"},
+    {"id": 3, "title": "Two books of Market Wisom", "image_url": "https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/569/9781946774569.jpg"},
+    {"id": 4, "title": "Atomic Habits", "image_url": "https://www.bookswagon.com/productimages/images200/831/9781847941831.jpg"},
+    {"id": 5, "title": "Power of Subconscious Mind", "image_url": "https://www.bookswagon.com/productimages/images200/839/9788194790839.jpg"},
+    {"id": 6, "title": "Do it Today", "image_url": "https://www.bookswagon.com/productimages/images200/126/9780143452126.jpg"},
+    {"id": 7, "title": "Laws of Human Nature", "image_url": "https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/191/9781781259191.jpg"},
+    {"id": 8, "title": "Think and Grow Rich", "image_url": "https://www.bookswagon.com/productimages/images200/525/9789389931525.jpg"},
+    {"id": 9, "title": "Warren Buffet Accounting", "image_url": "https://www.bookswagon.com/productimages/images200/150/9781939370150.jpg"},
+    {"id": 10, "title": "100 to 1", "image_url": "https://www.bookswagon.com/productimages/images200/293/9781626540293.jpg"},
+]
+
+book_urls2 = [
     {"id": 1, "title": "Warren Buffet Accounting", "image_url": "https://www.bookswagon.com/productimages/images200/150/9781939370150.jpg"},
     {"id": 2, "title": "100 to 1", "image_url": "https://www.bookswagon.com/productimages/images200/293/9781626540293.jpg"},
     {"id": 3, "title": "Two books of Market Wisom", "image_url": "https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/569/9781946774569.jpg"},
@@ -239,9 +285,13 @@ def get_book_description(book_id):
     else:
         return jsonify({"error": "Book not found"}), 404
 
-@app.route('/swiper-book-urls/', methods=['GET'])
-def get_book_urls():
-    return jsonify(book_urls)
+@app.route('/swiper_1/', methods=['GET'])
+def get_book_urls1():
+    return jsonify(book_urls1)
+
+@app.route('/swiper_2/', methods=['GET'])
+def get_book_urls2():
+    return jsonify(book_urls2)
 
 
 @app.route('/banners/', methods=['GET'])
@@ -264,6 +314,21 @@ def get_bookmarks():
 def get_comics():
     return jsonify(comics)
 
+@app.route('/finance/', methods=['GET'])
+def get_finance_books():
+    return jsonify(finance_books)
+
+@app.route('/kids/', methods=['GET'])
+def get_kids_books():
+    return jsonify(kids_books)
+
+@app.route('/motivation/', methods=['GET'])
+def get_motivation_books():
+    return jsonify(motivation_books)
+
+@app.route('/mythology/', methods=['GET'])
+def get_mythology_books():
+    return jsonify(mythology_books)
 
 @app.post("/cart/add/")
 async def add_to_cart(item: CartItem):
