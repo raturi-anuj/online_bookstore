@@ -11,6 +11,7 @@ import SignUp from './components/Auth/SignUp';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import BookDescription from './components/BookDescription/BookDescription';
 import Cart from './components/CartPage/CartPage'; 
+import PaymentPage from './components/PaymentPage/PaymentPage';
 import Footer from './components/Footer/Footer';
 import AboutUs from './pages/AboutUs/AboutUs';
 import FAQ from './pages/FAQ/FAQ';
@@ -43,7 +44,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword mobileNumber="1234567890" />} />
         <Route path="/book-description/:id" element={<BookDescription />} />
         <Route path="/cart" element={<Cart />} /> 
+        <Route path="/payment" element={<PaymentPage />} />
         <Route path="/books/:category" element={<BooksPage />} />
+        
       </Routes>
     </div>
   );

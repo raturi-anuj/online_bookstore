@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { Box, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete'; 
+import { useNavigate } from 'react-router-dom'; 
 import './CartPage.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [books, setBooks] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const cart = Cookies.get('cart') ? JSON.parse(Cookies.get('cart')) : [];
@@ -45,6 +47,13 @@ const CartPage = () => {
     setCartItems(updatedCart);
     Cookies.set('cart', JSON.stringify(updatedCart), { expires: 7 });
   };
+
+  const handleCheckout = () => {
+    if (cartItems.length > 0) {
+      navigate('/payment');
+    }
+  };
+
 
   return (
     <Box className="cart-page-container">
@@ -105,7 +114,15 @@ const CartPage = () => {
           return total + (book ? book.price * item.quantity : 0);
         }, 0)}
       </Typography>
-      <Button variant="contained" color="primary" className="checkout-button">Checkout</Button>
+      <Button
+      variant="contained"
+      color="primary"
+      className="checkout-button"
+      onClick={handleCheckout}
+      disabled={cartItems.length === 0} // Disable the button if cart is empty
+    >
+      Checkout
+    </Button>
     </Box>
   );
 };
